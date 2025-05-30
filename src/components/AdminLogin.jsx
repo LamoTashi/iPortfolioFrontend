@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../api/axios";
 
 function AdminLogin({ setToken}) {
     const [username, setUsername] = useState("");
@@ -16,7 +16,7 @@ function AdminLogin({ setToken}) {
 
         setLoading(true);
         try {
-            const response = await axios.post("https://iportfoliobackend-itg0.onrender.com", {
+            const response = await axios.post("/login", {
                 username,
                 password,
             });

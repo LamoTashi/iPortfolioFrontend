@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "../api/axios"; // Use configured axios instance
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -19,20 +20,14 @@ const Contact = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch("https://iportfoliobackend-itg0.onrender.com", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
-            });
+            const response = await axios.post("/contact", formData);
 
-            if (!response.ok) {
+            if (response.status === 200 || response.status === 201) {
+                setSubmitted(true);
+                setFormData({ name: "", message: "" });
+            } else {
                 throw new Error("Something went wrong!");
             }
-
-            setSubmitted(true);
-            setFormData({ name: "", message: "" }); // Clear form
         } catch (error) {
             console.error("Error sending message:", error);
             alert("Failed to send message.");
