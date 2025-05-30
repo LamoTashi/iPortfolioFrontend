@@ -16,7 +16,7 @@ function AdminLogin({ setToken}) {
 
         setLoading(true);
         try {
-            const response = await axios.post("https://localhost:7025/login", {
+            const response = await axios.post("https://iportfoliobackend-itg0.onrender.com", {
                 username,
                 password,
             });

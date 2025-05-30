@@ -19,7 +19,7 @@ const Contact = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch("https://localhost:7025/contact", {
+            const response = await fetch("https://iportfoliobackend-itg0.onrender.com", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
