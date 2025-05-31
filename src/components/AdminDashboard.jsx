@@ -112,29 +112,31 @@ function AdminDashboard() {
             <h1 className="text-3xl font-bold mb-6 mt-10 text-center">Admin Dashboard</h1>
 
             {/* Add Project */}
-            <div className="bg-gray-800 p-6 rounded mb-10 max-w-lg">
-                <h2 className="text-xl font-bold mb-4 text-center">Add New Project</h2>
-                <input className="p-2 rounded bg-gray-700 w-full mb-3" placeholder="Title"
-                    value={newProject.title}
-                    onChange={(e) => setNewProject({ ...newProject, title: e.target.value })}
-                />
-                <input className="p-2 rounded bg-gray-700 w-full mb-3" placeholder="Description"
-                    value={newProject.description}
-                    onChange={(e) => setNewProject({ ...newProject, description: e.target.value })}
-                />
-                <input className="p-2 rounded bg-gray-700 w-full mb-3" placeholder="GitHub Link"
-                    value={newProject.github}
-                    onChange={(e) => setNewProject({ ...newProject, github: e.target.value })}
-                />
-                <input className="p-2 rounded bg-gray-700 w-full mb-4" placeholder="Image URL"
-                    value={newProject.image}
-                    onChange={(e) => setNewProject({ ...newProject, image: e.target.value })}
-                />
-                <button className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded"
-                    onClick={handleAddProject}
-                >
-                    Add Project
-                </button>
+            <div className="flex justify-center mb-10">
+                <div className="bg-gray-800 p-6 rounded max-w-lg w-full">
+                    <h2 className="text-xl font-bold mb-4 text-center">Add New Project</h2>
+                    <input className="p-2 rounded bg-gray-700 w-full mb-3" placeholder="Title"
+                        value={newProject.title}
+                        onChange={(e) => setNewProject({ ...newProject, title: e.target.value })}
+                    />
+                    <input className="p-2 rounded bg-gray-700 w-full mb-3" placeholder="Description"
+                        value={newProject.description}
+                        onChange={(e) => setNewProject({ ...newProject, description: e.target.value })}
+                    />
+                    <input className="p-2 rounded bg-gray-700 w-full mb-3" placeholder="GitHub Link"
+                        value={newProject.github}
+                        onChange={(e) => setNewProject({ ...newProject, github: e.target.value })}
+                    />
+                    <input className="p-2 rounded bg-gray-700 w-full mb-4" placeholder="Image URL"
+                        value={newProject.image}
+                        onChange={(e) => setNewProject({ ...newProject, image: e.target.value })}
+                    />
+                    <button className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded"
+                        onClick={handleAddProject}
+                    >
+                        Add Project
+                    </button>
+                </div>
             </div>
 
             {/* Project Grid */}
