@@ -34,14 +34,20 @@ function Projects() {
                     projects.map((project) => (
                         <div key={project.id} className="bg-gray-800 rounded-xl shadow-md p-4 flex flex-col">
                             <img
-                                src={project.image || "https://via.placeholder.com/300x180"}
+                                src={project.imageUrl && project.imageUrl.startsWith("http")
+                                    ? project.imageUrl
+                                    : "https://picsum.photos/300/180"}
                                 alt={project.title}
                                 className="rounded mb-4 w-full h-40 object-cover"
                             />
                             <h2 className="text-xl font-semibold">{project.title}</h2>
                             <p className="text-sm my-2 flex-grow">{project.description}</p>
                             <a
-                                href={project.github}
+                                href={
+                                    project.githubUrl?.startsWith("http")
+                                        ? project.githubUrl
+                                        : `https://${project.githubUrl}`
+                                }
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-blue-400 underline"
